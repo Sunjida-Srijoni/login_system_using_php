@@ -12,9 +12,13 @@ session_start();
 if(isset($_GET['msg'])){
     echo "<h2>".$_GET['msg']."</h2>";
 
-    if(isset($_SESSION['uname'])){
-        echo "<h4>Hello ".$_SESSION['uname']."</h4>"; 
-    }
+ 
+}
+if(isset($_SESSION['uname'])){
+    echo "<h4>Hello ".$_SESSION['uname']."</h4>"; 
+}
+else{
+    header('location:index.php?message=You need to login to enter the site');
 }
 
 
@@ -22,6 +26,8 @@ if(isset($_GET['msg'])){
 
 
 ?>
+
+<a href="includes/logout_process.php" class="btn btn-danger">Logout</a>
 
 <?php
 include('includes/footer.php');
