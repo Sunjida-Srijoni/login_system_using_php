@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="includes/bootstrap/bootstrap/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" rel="stylesheet" href="includes/bootstrap/bootstrap/css/style.css">
-</head>
-<body>
-    <h1>LOGIN SYSTEM IN PHP</h1>
-    <div class="container">
-    <form class="form">
+<?php 
+include('includes/header.php');
+
+?>
+        <?php
+        if(isset($_GET['message'])){
+            echo "<h4>".$_GET['message']."</h4>";
+        }
+
+        ?>
+    <form class="form" action="includes/login_process.php" method="post">
         <div class="form-group">
             <label for="uname">Username</label>
-            <input type="text" name="uname" class="form-control">
+            <input type="text" name="uname" class="form-control mt-2">
         </div>
         <div class="form-group">
-            <label for="uname">Email</label>
-            <input type="email" name="email" class="form-control">
+            <label for="uname" class="mt-2">Email</label>
+            <input type="email" name="email" class="form-control mt-2">
         </div>
         <div class="form-group">
-            <input type="submit" name="login" value="Login" class="btn btn-success">
+            <input type="submit" name="login" value="Login" class="btn btn-success mt-3">
         </div>
     </form>
 
-    </div>
-    
-    
-</body>
-</html>
+  <?php
+  include('includes/footer.php');
+
+  ?>
